@@ -242,7 +242,7 @@ fun MessagesScreen(
                                         .padding(12.dp)
                                 ) {
                                     when (it.type) {
-                                        MessageType.Text -> TextMessageContent(content = it.text.orEmpty())
+                                        MessageType.Text -> TextMessageContent(content = (it.text ?: it.caption).orEmpty())
                                         else -> MediaMessageContent(
                                             message = it,
                                             channel = channel.username,
